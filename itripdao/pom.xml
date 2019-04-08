@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>itripbackend</artifactId>
+        <groupId>cn.itrip</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>itripdao</artifactId>
+        <dependencies>
+            <dependency>
+                <groupId>cn.itrip</groupId>
+                <artifactId>itriputils</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+          
+        </dependencies>
+    <build>
+        <!--默认在src/main/java目录，这个目录中默认只能放java源代码即.java结尾的文件，如果在src/main/java目录中编写xml文件。
+这些xml文件是不会被编译到target/classes目录中。-->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+
+            <resource>
+                <directory>src/main/resource</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+</project>
